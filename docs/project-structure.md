@@ -4,10 +4,10 @@
 This document outlines the complete file structure for the VOSC (Open Source Community at VCE) website project. The application is a full-stack web platform built with React frontend and Node.js backend, featuring user management, contribution tracking, event management, and integrated GSoC organization browsing functionality.
 
 ## Technology Stack
-- **Frontend**: React.js with routing
+- **Frontend**: Next.js (React framework) with App Router
 - **Backend**: Node.js with Express.js framework
-- **Database**: SQL database (e.g., PostgreSQL/MySQL)
-- **Authentication**: JWT-based
+- **Database**: Supabase (PostgreSQL)
+- **Authentication**: JWT-based with Supabase Auth
 - **External APIs**: GitHub API only
 - **Internal Features**: GSoC Organizations data managed locally
 - **Notifications**: Email (SMTP) and WhatsApp integration
@@ -16,16 +16,19 @@ This document outlines the complete file structure for the VOSC (Open Source Com
 
 ```
 vosc-project/
-├── frontend/           # React application
+├── frontend/           # Next.js application
 │   ├── public/         # Static assets (images, icons, etc.)
-│   ├── src/
+│   ├── src/            # Optional src directory
+│   ├── app/            # Next.js App Router directory
+│   │   ├── layout.js   # Root layout
+│   │   ├── page.js     # Homepage
+│   │   ├── globals.css # Global styles
 │   │   ├── components/ # Reusable UI components
-│   │   ├── pages/      # Page components
-│   │   ├── hooks/      # Custom React hooks
-│   │   ├── utils/      # Utility functions
-│   │   ├── services/   # API service functions
-│   │   ├── context/    # React context providers
-│   │   └── assets/     # Images, styles, etc.
+│   │   ├── lib/        # Utility functions and configurations
+│   │   ├── api/        # API routes (if using Next.js API)
+│   │   ├── (auth)/     # Route groups for organization
+│   │   ├── dashboard/  # Protected routes
+│   │   └── admin/      # Admin routes
 │   ├── package.json
 │   └── README.md
 ├── backend/            # Node.js API server
@@ -114,7 +117,7 @@ vosc-project/
 - `POST /api/admin/announcements` - Create announcement (admin)
 
 ### Database Directory (`/database`)
-**Purpose**: Contains database schema definitions, migration scripts, and seed data for the SQL database, including pre-populated GSoC organization data.
+**Purpose**: Contains Supabase database schema definitions, migrations, and seed data for PostgreSQL, including pre-populated GSoC organization data.
 
 **Database Tables**:
 - `users` - User accounts and authentication

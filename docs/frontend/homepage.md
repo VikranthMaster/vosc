@@ -1,6 +1,6 @@
 # Frontend: Homepage Component
 
-**File Location**: `frontend/src/pages/HomePage.jsx`
+**File Location**: `frontend/src/app/page.js`
 
 ## Purpose
 The Homepage serves as the main entry point for the VOSC website, introducing visitors to the Open Source Community at VCE and providing clear calls-to-action for engagement.
