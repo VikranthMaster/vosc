@@ -1,0 +1,24 @@
+{
+  "name": "vsoc",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "services.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@octokit/rest": "^22.0.1",
+    "@supabase/supabase-js": "^2.81.1",
+    "axios": "^1.13.2",
+    "chalk": "^5.6.2",
+    "cors": "^2.8.5",
+    "cron": "^4.3.4",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "nodemon": "^3.1.11",
+    "uuid": "^13.0.0"
+  }
+}
